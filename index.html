@@ -24,6 +24,8 @@
           <div v-for="element in risultati " class="" >
 
             <h3>{{element.title}}</h3>
+            <img :src="element.poster_path" alt="">
+            <img class="" alt="">{{element.poster_path}}
             <span class="">{{element.original_title}}</span>
             <span class="">{{element.original_language}}</span>
             <span class="">{{element.vote_average}}</span>
