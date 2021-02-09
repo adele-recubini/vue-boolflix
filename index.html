@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="root">
+
+    <div class="header">
+      <!-- dove cerco il film  -->
+      <input type="text" class="input-ricerca"
+          placeholder="cerca film" v-model="ricerca">
+        <button class="bottone" @click="cerca">click</button>
+    </div>
+    <!-- dove tutte le ifnromazioni vengono stampate a schermo  -->
+    <div class="container">
+          <div v-for="element in risultati " class="" >
+
+            <h3>{{element.title}}</h3>
+            <span class="">{{element.original_title}}</span>
+            <span class="">{{element.original_language}}</span>
+            <span class="">{{element.vote_average}}</span>
+        </div>
+    </div>
+
+
+  </div>
+<script src="main.js" charset="utf-8"></script>
+  </body>
+</html>
