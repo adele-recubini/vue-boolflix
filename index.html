@@ -12,13 +12,21 @@
   <body>
     <div id="root">
 
-    <div class="header">
+    <header>
       <!-- dove cerco il film
        il @keyup va inserito nell imput il @click va inserito nel button-->
-      <input type="text" class="input-ricerca"
-          placeholder="cerca film" v-model="ricerca" @keyup.enter="cerca">
-        <button class="bottone"  @click="cerca">click</button>
-    </div>
+       <div class="header-img">
+         <img src="img/netflix.png" alt="">
+
+       </div>
+
+       <div class="header-botton-search">
+         <input type="text" class="input-ricerca"
+           placeholder="cerca film" v-model="ricerca" @keyup.enter="cerca">
+           <button class="bottone"  @click="cerca">click</button>
+       </div>
+  </header>
+
     <!-- dove tutte le ifnromazioni vengono stampate a schermo  -->
 
     <div class="container">
@@ -28,8 +36,8 @@
             <img :src= locandina(element.poster_path) alt="">
             <span class="">{{element.original_title}}</span>
             <span class="">{{element.original_language}}</span>
-            <span class="">{{element.vote_average}}</span>
-            <span><i class="far fa-star"></i></span>
+            <!-- <span>stelle(element.voto_avarage)</span> -->
+            <span><i class="fas fa-star"></i></span>
           </div>
         </div>
     </div>

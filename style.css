@@ -1,23 +1,44 @@
 * {
-    box-sizing: border-box;
-    margin: 0 auto;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
 }
 
 #root {
     font-family: 'Lato', sans-serif;
 }
-.header{
- height: 70px;
- background-color: black;
+
+header{
+height: 70px;
+display:flex;
+flex-direction: row;
+justify-content:space-between;
+background-color: black;
+width: 100vw;
+}
+img{
+  height: 50px;
 }
 
-
+.header-img{
+float:left;
+width: 50%;
 }
+
+.header-botton-search{
+  float:left;
+  line-height: 70px;
+  margin-right:0px;
+}
+
+.container{
+  padding-top: 30px;
+  width: 1200px;
+  border: 1px solid black;
+}
+
 .poster{
   width: 500px;
   border: 1px solid black;
-
-
 
 }
