@@ -54,3 +54,16 @@ var app = new Vue({
 });
 
 Vue.config.devtools = true
+
+
+// per gestire le bandiere ?
+
+//
+// self.risultati.forEach((element) => {
+//   if (self.original_language === 'it') {
+//     self.original_language === 'img/it.png'
+//   }
+//   if (self.original_language === 'eg') {
+//     self.original_language === 'img/eg.svg'
+//   }
+// });
