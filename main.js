@@ -11,7 +11,7 @@ var app = new Vue({
     data: {
         risultati: [],
         ricerca: '',
-        lingue:['it'],
+        lingue:['it' , 'en'],
 
     },
     methods: {
