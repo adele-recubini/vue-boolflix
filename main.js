@@ -37,8 +37,8 @@ var app = new Vue({
       // funzione che mi genera la locandina
 
 
-      locandina:function(poster_path){
-        return 'https://image.tmdb.org/t/p' + '/w342/' + poster_path
+      locandina:function(poster){
+        return 'https://image.tmdb.org/t/p' + '/w342/' + poster
       },
 
       // funzione per la generazione delle stelline

@@ -16,13 +16,14 @@ justify-content:space-between;
 background-color: black;
 width: 100vw;
 }
-img{
-  height: 50px;
-}
+
 
 .header-img{
 float:left;
 width: 50%;
+}
+.header-img>img{
+  height: 50px;
 }
 
 .header-botton-search{
