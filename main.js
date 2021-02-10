@@ -41,9 +41,9 @@ var app = new Vue({
 
       // funzione per la generazione delle stelline
 
-      // stelle:function(voto){
-      //   return Math.ceil(voto/2)
-      // }
+      stelle:function(voto_avarage){
+        return Math.ceil(voto_avarage/2)
+      },
 
 
 
