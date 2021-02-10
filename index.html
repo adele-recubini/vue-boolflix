@@ -37,7 +37,9 @@
             <span class="">{{element.original_title}}</span>
             <span class="">{{element.original_language}}</span>
             <span class="stelle(element.vote_average)"></span>
-            <!-- <span><i class="fas fa-star"></i></span> -->
+
+            <span><i class="fas fa-star" v-for="element in stelle(element.vote_average)"></i></span>
+            <span><i class="far fa-star" v-for="element in (5 - stelle(element.vote_average))"></i></span>
           </div>
         </div>
     </div>

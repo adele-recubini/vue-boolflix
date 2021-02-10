@@ -17,6 +17,7 @@ var app = new Vue({
       // con una funzione richiamo film e dopo serie tv con lo stesso procedimento, ovviamente cambierà la seconda parte una volta è serch movie e una volta è serach tv
       cerca:function(){
         const self = this;
+
         axios.get('https://api.themoviedb.org/3/search/movie?api_key=59974366f70c9bc6b02a5ff65f4411d9&query=' + self.ricerca)
           .then((risposta) => {
             self.risultati = risposta.data.results
@@ -41,9 +42,22 @@ var app = new Vue({
 
       // funzione per la generazione delle stelline
 
-      stelle:function(vote_average){
-        return Math.ceil(vote_average / 2)
-      },
+      stelle:function(voto){
+        return Math.ceil(voto / 2);
+      }
+
+      // per gestire le bandiere ?
+
+
+      // self.risultati.forEach((element) => {
+      //   if (self.original_language === 'it') {
+      //     self.original_language === 'img/it.png'
+      //   }
+      //   if (self.original_language === 'en') {
+      //     self.original_language === 'img/eg.svg'
+      //   }
+      // });
+
 
 
 
@@ -54,16 +68,3 @@ var app = new Vue({
 });
 
 Vue.config.devtools = true
-
-
-// per gestire le bandiere ?
-
-//
-// self.risultati.forEach((element) => {
-//   if (self.original_language === 'it') {
-//     self.original_language === 'img/it.png'
-//   }
-//   if (self.original_language === 'eg') {
-//     self.original_language === 'img/eg.svg'
-//   }
-// });
