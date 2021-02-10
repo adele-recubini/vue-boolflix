@@ -35,7 +35,10 @@
             <h3>{{element.title}}</h3>
             <img :src= locandina(element.poster_path) alt="">
             <span class="">{{element.original_title}}</span>
-            <span class="">{{element.original_language}}</span>
+            <!-- gestione delle lingue da stringhe ad immagini  -->
+            <img v-if="lingue.includes(element.original_language)" :src="'img/' + element.original_language + '.png'">
+
+            <!-- <span class="">{{element.original_language}}</span> -->
             <span class="stelle(element.vote_average)"></span>
 
             <span><i class="fas fa-star" v-for="element in stelle(element.vote_average)"></i></span>

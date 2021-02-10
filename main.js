@@ -11,6 +11,7 @@ var app = new Vue({
     data: {
         risultati: [],
         ricerca: '',
+        lingue:['it'],
 
     },
     methods: {
@@ -46,17 +47,7 @@ var app = new Vue({
         return Math.ceil(voto / 2);
       }
 
-      // per gestire le bandiere ?
 
-
-      // self.risultati.forEach((element) => {
-      //   if (self.original_language === 'it') {
-      //     self.original_language === 'img/it.png'
-      //   }
-      //   if (self.original_language === 'en') {
-      //     self.original_language === 'img/eg.svg'
-      //   }
-      // });
 
 
 
@@ -68,3 +59,20 @@ var app = new Vue({
 });
 
 Vue.config.devtools = true
+
+
+
+
+// per gestire le bandiere ?
+// ragionamento giusto ma per la struttura del codice è errato
+// cosi andiamo a sovrascivere un dato che di per se non deve essere toccato ma solo gestito e soprattutto non è atomico
+
+
+// self.risultati.forEach((element) => {
+//   if (self.original_language === 'it') {
+//     self.original_language === 'img/it.png'
+//   }
+//   if (self.original_language === 'en') {
+//     self.original_language === 'img/eg.svg'
+//   }
+// });
