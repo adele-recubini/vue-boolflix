@@ -37,3 +37,17 @@ width: 50%;
   width: 1200px;
   border: 1px solid black;
 }
+.poster {
+    float:left;
+    width: 200px;
+    height: 300px;
+
+}
+
+/* retro delle card */
+.flags{
+  height: 10px;
+}
+i{
+  height: 5px;
+}

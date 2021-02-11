@@ -17,42 +17,45 @@ var app = new Vue({
     methods: {
       // con una funzione richiamo film e dopo serie tv con lo stesso procedimento, ovviamente cambierà la seconda parte una volta è serch movie e una volta è serach tv
       cerca:function(){
+
         const self = this;
-
-        axios.get('https://api.themoviedb.org/3/search/movie?api_key=59974366f70c9bc6b02a5ff65f4411d9&query=' + self.ricerca)
-          .then((risposta) => {
-            self.risultati = risposta.data.results
-          });
-
-          // serie tv
-
-        axios.get('https://api.themoviedb.org/3/search/tv?api_key=59974366f70c9bc6b02a5ff65f4411d9&query=' + self.ricerca)
-          .then((risposta) =>{
-            self.risultati = risposta.data.results
-
-          });
+        self.risultati=[];
+        self.cercafilm();
+        self.cercatelefilm();
 
       },
 
-      // funzione che mi genera la locandina
+      cercafilm:function(){
 
+        axios.get('https://api.themoviedb.org/3/search/movie?api_key=59974366f70c9bc6b02a5ff65f4411d9&query=' + self.ricerca)
+          .then((risposta) => {
+            // self.risultati = risposta.data.results
+            self.risultati = [...self.risultati, ...risposta.data.results];
+          });
+
+       },
+
+       cercatelefilm:function(){
+
+        axios.get('https://api.themoviedb.org/3/search/tv?api_key=59974366f70c9bc6b02a5ff65f4411d9&query=' + self.ricerca)
+          .then((risposta) =>{
+            // self.risultati = risposta.data.results
+            self.risultati = [...self.risultati, ...risposta.data.results];
+
+          });
+        },
+
+      // funzione per la locandina
 
       locandina:function(poster){
         return 'https://image.tmdb.org/t/p' + '/w342/' + poster
       },
 
-      // funzione per la generazione delle stelline
+      // funzione per le portare i 10 voti a cinque
 
       stelle:function(voto){
         return Math.ceil(voto / 2);
       }
-
-
-
-
-
-
-
 
 // fine methods
     }
