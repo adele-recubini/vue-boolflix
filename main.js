@@ -49,9 +49,17 @@ var app = new Vue({
 
       // funzione per la locandina
 
-      locandina:function(poster){
-        return 'https://image.tmdb.org/t/p' + '/w342/' + poster
-      },
+      // locandina:function(poster){
+      //   return 'https://image.tmdb.org/t/p' + '/w342/' + poster
+      // },
+
+        locandina:function(poster) {
+          if(poster) {
+            return 'https://image.tmdb.org/t/p' + '/w342/' + poster
+          }else {
+            return  'img/default.jpg'
+          }
+        },
 
       // funzione per portare i 10 voti a cinque
 
