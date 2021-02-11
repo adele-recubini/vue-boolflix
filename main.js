@@ -47,6 +47,7 @@ var app = new Vue({
           });
         },
 
+
       // funzione per la locandina
 
       // locandina:function(poster){
