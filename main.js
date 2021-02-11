@@ -21,25 +21,27 @@ var app = new Vue({
         const self = this;
         self.risultati=[];
         self.cercafilm();
-        self.cercatelefilm();
+        self.cercaTelefilm();
 
       },
 
       cercafilm:function(){
+        const self = this;
 
         axios.get('https://api.themoviedb.org/3/search/movie?api_key=59974366f70c9bc6b02a5ff65f4411d9&query=' + self.ricerca)
           .then((risposta) => {
-            // self.risultati = risposta.data.results
+            self.risultati = risposta.data.results;
             self.risultati = [...self.risultati, ...risposta.data.results];
           });
 
        },
 
-       cercatelefilm:function(){
+       cercaTelefilm:function(){
+         const self = this;
 
         axios.get('https://api.themoviedb.org/3/search/tv?api_key=59974366f70c9bc6b02a5ff65f4411d9&query=' + self.ricerca)
           .then((risposta) =>{
-            // self.risultati = risposta.data.results
+            self.risultati = risposta.data.results;
             self.risultati = [...self.risultati, ...risposta.data.results];
 
           });

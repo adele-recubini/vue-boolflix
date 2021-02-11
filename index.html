@@ -37,12 +37,12 @@
               <!-- <h3>{{element.title}}</h3> -->
               <img :src= locandina(element.poster_path) alt="">
             </div>
-            
+
             <div class="retro">
-
-
-             <span class="">{{element.original_title}}</span>
-             <!-- gestione delle lingue da stringhe ad immagini  -->
+              <h3 v-if="element.title">{{ element.title}}</h3>
+              <h3 v-if="element.name"> {{ element.name}}</h3>
+              <span v-if="element.original_title">{{element.original_title}}</span>
+                <span v-if="element.original_name">{{element.original_name}}</span>
               <img class="flags" v-if="lingue.includes(element.original_language)" :src="'img/' + element.original_language + '.png'">
               <!-- <span>{{stelle(element.vote_average)}}</span> -->
 
