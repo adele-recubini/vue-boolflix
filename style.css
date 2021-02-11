@@ -57,14 +57,10 @@ width: 50%;
 /* se giro la locandina - fronte di 180 gradi vedo il retro */
 .locandine:hover .fronte{
   transform: rotateY(180deg);
-
 }
 
 
 /* retro delle card */
 .flags{
   height: 10px;
-}
-i{
-  height: 5px;
 }

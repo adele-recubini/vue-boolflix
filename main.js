@@ -53,7 +53,7 @@ var app = new Vue({
         return 'https://image.tmdb.org/t/p' + '/w342/' + poster
       },
 
-      // funzione per le portare i 10 voti a cinque
+      // funzione per portare i 10 voti a cinque
 
       stelle:function(voto){
         return Math.ceil(voto / 2);
