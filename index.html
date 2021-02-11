@@ -36,7 +36,7 @@
               <img :src= locandina(element.poster_path) class="fronte" alt="">
             </div>
 
-            <!-- <div class="retro">
+            <div class="retro">
               <h4 v-if="element.title">{{element.title}}</h4>
                 <h4 v-if="element.name"> {{element.name}}</h4>
 
@@ -53,7 +53,7 @@
              <span><i class="fas fa-star" v-for="element in stelle(element.vote_average)"></i></span>
               <span><i class="far fa-star" v-for="element in (5 - stelle(element.vote_average))"></i></span>
             </div>
-        </div> -->
+        </div>
       </div>
     </div>
 
