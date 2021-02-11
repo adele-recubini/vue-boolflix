@@ -22,13 +22,13 @@ float:left;
 width: 50%;
 }
 .header-img>img{
-  height: 50px;
+  height: 70px;
 }
 
 .header-botton-search{
   float:left;
   line-height: 70px;
-  margin-right:0px;
+  /* margin-right:0px; */
 }
 /* fine header */
 
