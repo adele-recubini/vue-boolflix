@@ -13,7 +13,7 @@ body{
 }
 /* immagine e search  */
 header{
-height: 70px;
+height: 80px;
 display:flex;
 flex-direction: row;
 justify-content:space-between;
@@ -26,7 +26,7 @@ float:left;
 width: 50%;
 }
 .header-img>img{
-  height: 70px;
+  height: 80px;
 }
 
 .header-botton-search{
@@ -41,13 +41,15 @@ input{
 }
 input[placeholder]{
   padding-left:15px;
-  
-
+}
+input[type]{
+  font-size: 20px;
 }
 
 
+
 .bottone{
-  border-radius: 10px;
+  border-radius: 50%;
   height: 35px;
   width: 35px;
 }
