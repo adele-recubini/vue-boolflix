@@ -45,6 +45,12 @@ input[placeholder]{
 input[type]{
   font-size: 20px;
 }
+input[placeholder]:hover{
+  background-color: lightgreen;
+}
+.bottone:hover{
+  background-color: lightgreen;
+}
 
 
 
