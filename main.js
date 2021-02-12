@@ -23,8 +23,10 @@ var app = new Vue({
 
         const self = this;
         self.risultati=[];
+        self.attori=[];
         self.cercafilm();
         self.cercaTelefilm();
+        self.cercaAttori();
 
       },
       // chiamata axios per i film
