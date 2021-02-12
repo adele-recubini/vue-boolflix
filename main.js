@@ -5,6 +5,8 @@
 
 // per 'costruire' la locandina esempio
 // https://image.tmdb.org/t/p    /w342/   wwemzKWzjKYJFfCeiB57q3r4Bcm.png
+// chiamata axios per il cast
+// https://api.themoviedb.org/3/movie/250845/credits?api_key=59974366f70c9bc6b02a5ff65f4411d9
 
 var app = new Vue({
     el: '#root',
@@ -12,6 +14,7 @@ var app = new Vue({
         risultati: [],
         ricerca: '',
         lingue:['it' , 'en'],
+        attori:[],
 
     },
     methods: {
@@ -24,6 +27,7 @@ var app = new Vue({
         self.cercaTelefilm();
 
       },
+      // chiamata axios per i film
 
       cercafilm:function(){
         const self = this;
@@ -35,6 +39,7 @@ var app = new Vue({
           });
 
        },
+       // chiamata axios per i telefilm
 
        cercaTelefilm:function(){
          const self = this;
@@ -46,6 +51,31 @@ var app = new Vue({
 
           });
         },
+
+        // chiamata axios per vedere gli attori
+
+        cercaAttori:function(){
+          const self = this;
+          self.risultati.forEach((element) => {
+          axios.get ('https://api.themoviedb.org/3/movie/'+ element.id + '/credits?api_key=59974366f70c9bc6b02a5ff65f4411d9')
+           .then((risposta) =>{
+
+             self.attori = risposta.data.cast;
+              console.log(self.attori);
+
+
+
+           })
+
+
+
+
+        });
+       },
+
+        // ('https://api.themoviedb.org/3/movie/'+ element.id + '/credits?api_key=59974366f70c9bc6b02a5ff65f4411d9')
+
+
 
 
       // funzione per la locandina

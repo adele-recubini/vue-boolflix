@@ -53,6 +53,10 @@
              <span><i class="fas fa-star" v-for="element in stelle(element.vote_average)"></i></span>
               <span><i class="far fa-star" v-for="element in (5 - stelle(element.vote_average))"></i></span><br>
               <h5>{{element.overview}}</h5>
+              <div v-for="element in attori">
+                {{element.name}}
+              </div>
+
             </div>
         </div>
       </div>

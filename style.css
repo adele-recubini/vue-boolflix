@@ -41,8 +41,8 @@ width: 50%;
 /* grandezza di ogni locandina  */
 .locandine{
     float:left;
-    width: 200px;
-    height: 300px;
+    width: 300px;
+    height: 400px;
     padding: 20px;
     position: relative;
     margin:10px 10px;
