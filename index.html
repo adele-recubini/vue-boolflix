@@ -44,14 +44,15 @@
                 <span v-if="element.original_name" >{{element.original_name}}</span>
 
 
-             <span class="">{{element.original_title}}</span>
+             <span class="">{{element.original_title}}</span><br>
 
-              <img class="flags" v-if="lingue.includes(element.original_language)" :src="'img/' + element.original_language + '.png'">
+              <img class="flags" v-if="lingue.includes(element.original_language)" :src="'img/' + element.original_language + '.png'"><br>
 
              <span class="stelle(element.vote_average)"></span>
 
              <span><i class="fas fa-star" v-for="element in stelle(element.vote_average)"></i></span>
-              <span><i class="far fa-star" v-for="element in (5 - stelle(element.vote_average))"></i></span>
+              <span><i class="far fa-star" v-for="element in (5 - stelle(element.vote_average))"></i></span><br>
+              <h5>{{element.overview}}</h5>
             </div>
         </div>
       </div>

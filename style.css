@@ -57,7 +57,7 @@ width: 50%;
 }
 /* se giro la locandina - fronte di 180 gradi vedo il retro */
 .locandine:hover .fronte{
- opacity: 0.2;
+ opacity: 0.3;
 }
 .retro{
   z-index: -1;
@@ -66,5 +66,5 @@ width: 50%;
 
 /* retro delle card */
 .flags{
-  height: 10px;
+  height: 20px;
 }
