@@ -22,16 +22,17 @@ var app = new Vue({
       cerca:function(){
 
         const self = this;
+
         self.risultati=[];
         self.attori=[];
-        self.cercafilm();
+        self.cercaFilm();
         self.cercaTelefilm();
         self.cercaAttori();
 
       },
       // chiamata axios per i film
 
-      cercafilm:function(){
+      cercaFilm:function(){
         const self = this;
 
         axios.get('https://api.themoviedb.org/3/search/movie?api_key=59974366f70c9bc6b02a5ff65f4411d9&query=' + self.ricerca)

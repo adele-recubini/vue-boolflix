@@ -37,10 +37,10 @@
             </div>
 
             <div class="retro">
-              <h4 v-if="element.title">{{element.title}}</h4>
-                <h4 v-if="element.name"> {{element.name}}</h4>
+              <h4 v-if="element.title">Titolo:{{element.title}}</h4>
+                <h4 v-if="element.name">{{element.name}}</h4>
 
-                <span v-if="element.original_title">{{element.original_title }}</span>
+                <span v-if="element.original_title">Titolo Originale:{{element.original_title }}</span>
                 <span v-if="element.original_name" >{{element.original_name}}</span>
 
 
@@ -51,8 +51,8 @@
              <span class="stelle(element.vote_average)"></span>
 
              <span><i class="fas fa-star" v-for="element in stelle(element.vote_average)"></i></span>
-              <span><i class="far fa-star" v-for="element in (5 - stelle(element.vote_average))"></i></span><br>
-              <h5>{{element.overview}}</h5>
+              <span><i class="far fa-star" v-for="element in (5 - stelle(element.vote_average))"></i></span><br><br>
+              <h6>Overview: {{element.overview}}</h6>
               <div v-for="element in attori">
                 {{element.name}}
               </div>
