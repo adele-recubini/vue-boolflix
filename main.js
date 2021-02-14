@@ -18,6 +18,7 @@ var app = new Vue({
 
     },
     methods: {
+
       // con una funzione richiamo film e dopo serie tv con lo stesso procedimento, ovviamente cambierà la seconda parte una volta è serch movie e una volta è serach tv
       cerca:function(){
 
@@ -27,7 +28,7 @@ var app = new Vue({
         self.attori=[];
         self.cercaFilm();
         self.cercaTelefilm();
-        self.cercaAttori();
+        // self.cercaAttori(id);
 
       },
       // chiamata axios per i film
@@ -51,29 +52,22 @@ var app = new Vue({
           .then((risposta) =>{
             self.risultati = risposta.data.results;
             self.risultati = [...self.risultati, ...risposta.data.results];
+            console.log(self.risultati);
 
           });
         },
 
         // chiamata axios per vedere gli attori
 
-        cercaAttori:function(){
+        cercaAttori:function(id){
           const self = this;
-          self.risultati.forEach((element) => {
-          axios.get ('https://api.themoviedb.org/3/movie/'+ element.id + '/credits?api_key=59974366f70c9bc6b02a5ff65f4411d9')
+           return  axios.get ('https://api.themoviedb.org/3/movie/'+ element.id + '/   credits?api_key=59974366f70c9bc6b02a5ff65f4411d9')
            .then((risposta) =>{
 
              self.attori = risposta.data.cast;
               console.log(self.attori);
-
-
-
            })
 
-
-
-
-        });
        },
 
         // ('https://api.themoviedb.org/3/movie/'+ element.id + '/credits?api_key=59974366f70c9bc6b02a5ff65f4411d9')
