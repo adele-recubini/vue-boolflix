@@ -17,6 +17,13 @@
        il @keyup va inserito nell imput il @click va inserito nel button-->
        <div class="header-img">
          <img src="img/netflix.png" alt="">
+        </div>
+
+        <div>
+         <select v-model="generiSelect" name="">
+               <option v-for="element in generi">
+               {{element.name}}</option>
+             </select>
        </div>
 
        <div class="header-botton-search">
@@ -29,7 +36,7 @@
     <!-- dove tutte le ifnromazioni vengono stampate a schermo  -->
 
     <div class="container">
-      <div v-for="element in risultati">
+      <div v-for="element in risultati" v-if="generiSelect === element.name || generiSelect === ''">
         <div class="locandine">
 
             <div class="fronte">
@@ -54,7 +61,14 @@
               <span><i class="far fa-star" v-for="element in (5 - stelle(element.vote_average))"></i></span><br>
               <h6>Overview: {{element.overview}}</h6>
 
-              <span @mouseenter="cercaAttori(element.id)" v-for="element in attori">attori:{{element.name}}</span>
+              <div @click="cercaAttori(element.id)" class="attori">
+                <span  v-for="element in attori">attori:{{element.name}}</span>
+              </div>
+
+
+
+              <!-- qui faccio un v-for dell array generi cosi quando li seleziono li vedo a schermo  -->
+
 
 
 

@@ -16,6 +16,9 @@ var app = new Vue({
         lingue:['it' , 'en'],
         attori:[],
 
+        generiSelect:'',
+        generi:[],
+
     },
     methods: {
 
@@ -25,9 +28,10 @@ var app = new Vue({
         const self = this;
 
         self.risultati=[];
-        self.attori=[];
+        //self.attori=[];
         self.cercaFilm();
         self.cercaTelefilm();
+        self.chiamataGeneri();
         // self.cercaAttori(id);
 
       },
@@ -40,7 +44,44 @@ var app = new Vue({
           .then((risposta) => {
             self.risultati = risposta.data.results;
             self.risultati = [...self.risultati, ...risposta.data.results];
+
+            // self.risultati.forEach((element) => {
+            //   if (!self.generi.includes(element.genre_ids)) {
+            //      self.generi.push(element.genre_ids)
+            //   }
+            // });
           });
+
+       },
+
+
+       chiamataGeneri:function(){
+         const self = this;
+
+           axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=59974366f70c9bc6b02a5ff65f4411d9')
+           .then((risposta) =>{
+             self.generi = risposta.data.genres
+             self.generi.forEach((element) => {
+               if(!self.generi.includes(element.name))
+               self.generi.push(element.name)
+               console.log(self.generi);
+             });
+
+           })
+           axios.get('https://api.themoviedb.org/3/genre/tv/list?api_key=59974366f70c9bc6b02a5ff65f4411d9')
+           .then((risposta) =>{
+             self.generi = risposta.data.genres
+             self.generi.forEach((element) => {
+               if(!self.generi.includes(element.name))
+               self.generi.push(element.name)
+               console.log(self.generi);
+             });
+
+           })
+
+
+
+
 
        },
        // chiamata axios per i telefilm
@@ -53,6 +94,13 @@ var app = new Vue({
             self.risultati = risposta.data.results;
             self.risultati = [...self.risultati, ...risposta.data.results];
             console.log(self.risultati);
+            // self.risultati.forEach((element) => {
+            //   if (!self.generi.includes(element.genre_ids)) {
+            //      self.generi.push(element.genre_ids)
+            //
+            //   }
+            // });
+
 
           });
         },
@@ -61,19 +109,22 @@ var app = new Vue({
 
         cercaAttori:function(id){
           const self = this;
-           return  axios.get ('https://api.themoviedb.org/3/movie/'+ element.id + '/   credits?api_key=59974366f70c9bc6b02a5ff65f4411d9')
+           return  axios.get('https://api.themoviedb.org/3/movie/'+ id + '/credits?api_key=59974366f70c9bc6b02a5ff65f4411d9')
            .then((risposta) =>{
 
              self.attori = risposta.data.cast;
-              console.log(self.attori);
-           })
+              console.log('risultato attori', self.attori);
+           });
 
        },
-
-        // ('https://api.themoviedb.org/3/movie/'+ element.id + '/credits?api_key=59974366f70c9bc6b02a5ff65f4411d9')
-
-
-
+     //   gener:function(){
+     //   self.risultati.forEach((element) => {
+     //     if (!self.generi.includes(element.genre_ids)) {
+     //        self.generi.push(element.genre_ids)
+     //        console.log(self.generi);
+     //     }
+     //   });
+     // },
 
       // funzione per la locandina
 
