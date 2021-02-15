@@ -19,6 +19,9 @@ var app = new Vue({
         generiSelect:'',
         generi:[],
 
+
+
+
     },
     methods: {
 
@@ -35,10 +38,12 @@ var app = new Vue({
         // self.cercaAttori(id);
 
       },
+
       // chiamata axios per i film
 
       cercaFilm:function(){
         const self = this;
+
 
         axios.get('https://api.themoviedb.org/3/search/movie?api_key=59974366f70c9bc6b02a5ff65f4411d9&query=' + self.ricerca)
           .then((risposta) => {
@@ -50,6 +55,9 @@ var app = new Vue({
             //      self.generi.push(element.genre_ids)
             //   }
             // });
+            if (self.ricerca !== self.risultati) {
+              alert('file not found')
+            }
           });
 
        },
