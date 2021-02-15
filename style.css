@@ -108,9 +108,22 @@ i{
 }
 .attori{
   width: 300px;
-  height: 100px;
-  border: 1px solid white;
+  height: 200px;
   z-index:2;
-
-
+}
+.selector{
+  float: right;
+  width: 50px;
+ line-height: 25px;
+  height: 35px;
+}
+select{
+  width: 100px;
+}
+a{
+  line-height: 70px;
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  vertical-align:top;
 }

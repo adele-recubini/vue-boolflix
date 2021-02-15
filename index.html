@@ -17,13 +17,19 @@
        il @keyup va inserito nell imput il @click va inserito nel button-->
        <div class="header-img">
          <img src="img/netflix.png" alt="">
-        </div>
+         <a href="#">Home</a>
+         <a href="#">Serie Tv</a>
+         <a href="#">Film</a>
+         <a href="#">Nuovi e popolari</a>
+         <a href="#">La mia lista</a>
 
-        <div>
-         <select v-model="generiSelect" name="">
-               <option v-for="element in generi">
+       <div class="selector">
+         <label for="generi">Generi</label>
+         <select v-model="generiSelect" name="" value="">
+               <option v-for="element in generi" value="">
                {{element.name}}</option>
              </select>
+        </div>
        </div>
 
        <div class="header-botton-search">
