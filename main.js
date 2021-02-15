@@ -55,9 +55,9 @@ var app = new Vue({
             //      self.generi.push(element.genre_ids)
             //   }
             // });
-            if (self.ricerca !== self.risultati) {
-              alert('file not found')
-            }
+            // if (self.ricerca !== self.risultati) {
+            //   alert('file not found')
+            // }
           });
 
        },
