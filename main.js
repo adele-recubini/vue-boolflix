@@ -117,22 +117,9 @@ var app = new Vue({
            });
 
        },
-     //   gener:function(){
-     //   self.risultati.forEach((element) => {
-     //     if (!self.generi.includes(element.genre_ids)) {
-     //        self.generi.push(element.genre_ids)
-     //        console.log(self.generi);
-     //     }
-     //   });
-     // },
 
-      // funzione per la locandina
 
-      // locandina:function(poster){
-      //   return 'https://image.tmdb.org/t/p' + '/w342/' + poster
-      // },
-
-        locandina:function(poster) {
+      locandina:function(poster) {
           if(poster) {
             return 'https://image.tmdb.org/t/p' + '/w342/' + poster
           }else {
